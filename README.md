@@ -12,7 +12,7 @@
 | Vishakha Adtani | C1_A4_56 |
 | Sankalp Jain | C1_A3_43 |
 
-🔗 **GitHub:** [github.com/Rohit-998/DAA_Project](https://github.com/Rohit-998/DAA_Project)
+🔗 **GitHub:** [github.com/Rashi-Karule/game-inventory-optimizer](https://github.com/Rashi-Karule/game-inventory-optimizer)
 
 ---
 
