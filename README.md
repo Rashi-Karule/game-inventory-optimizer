@@ -22,7 +22,7 @@ Add items (name, weight, value) to your inventory and run 3 algorithms on them:
 
 | Feature | Algorithm | What it does |
 |---------|-----------|--------------|
-| ⚡ Optimize | 0/1 Knapsack (DP) | Picks best items within a weight limit |
+|⚡Optimize | 0/1 Knapsack (DP) | Picks best items within a weight limit |
 | ↕ Sort | Merge Sort | Sorts items by weight or value |
 | 🔍 Search | Linear Search | Finds an item by name |
 
