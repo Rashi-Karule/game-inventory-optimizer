@@ -3,7 +3,7 @@
  * API: http://127.0.0.1:5001 (5000 is often blocked on Windows)
  */
 
-const API_BASE = "http://127.0.0.1:5001";
+const API_BASE = "https://game-inventory-optimizer.onrender.com";
 
 const SAMPLE_ITEMS = [
   { name: "Excalibur", weight: 5, value: 100 },
