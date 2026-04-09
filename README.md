@@ -1,87 +1,52 @@
 # ⚔️ Game Inventory Optimizer
 
-> A web app that lets you manage a game inventory and run classic algorithms on it — built for **Design and Analysis of Algorithms (DAA)**, Sem IV, B. Tech AIML.
+A full-stack web application that lets you manage a game inventory and run classic Design and Analysis of Algorithms (DAA) techniques on it — now fully deployed and accessible online.
+
+🌐 **Live App:** https://game-inventory-optimizer.vercel.app/
 
 ---
 
 ## 👥 Team
 
-| Name | Roll No. |
-|------|----------|
-| Rashi Karule | C1_A3_45 |
+| Name            | Roll No. |
+| --------------- | -------- |
+| Rashi Karule    | C1_A3_45 |
 | Vishakha Adtani | C1_A4_56 |
-| Sankalp Jain | C1_A3_43 |
+| Sankalp Jain    | C1_A3_43 |
 
-🔗 **GitHub:** [github.com/Rashi-Karule/game-inventory-optimizer](https://github.com/Rashi-Karule/game-inventory-optimizer)
+🔗 GitHub: https://github.com/Rashi-Karule/game-inventory-optimizer
 
 ---
 
-## ⚡ What It Does
+## ⚡ Features
 
-Add items (name, weight, value) to your inventory and run 3 algorithms on them:
+Add items (name, weight, value) and apply powerful algorithms:
 
-| Feature | Algorithm | What it does |
-|---------|-----------|--------------|
-|⚡Optimize | 0/1 Knapsack (DP) | Picks best items within a weight limit |
-| ↕ Sort | Merge Sort | Sorts items by weight or value |
-| 🔍 Search | Linear Search | Finds an item by name |
+| Feature    | Algorithm                          | Description                            |
+| ---------- | ---------------------------------- | -------------------------------------- |
+| ⚡ Optimize | 0/1 Knapsack (Dynamic Programming) | Selects best items within weight limit |
+| ↕ Sort     | Merge Sort                         | Sorts items by weight or value         |
+| 🔍 Search  | Linear Search                      | Finds item by name                     |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend** — Python + Flask (REST API)
-- **Frontend** — HTML, CSS, JavaScript (dark RPG theme)
-- **Algorithms** — implemented from scratch, no libraries
+* **Frontend:** HTML, CSS, JavaScript (Dark RPG UI)
+* **Backend:** Python (Flask REST API)
+* **Algorithms:** Implemented from scratch (No libraries)
+* **Deployment:**
+
+  * Frontend → Vercel
+  * Backend → Render
 
 ---
 
-## 🚀 How to Run
+## 🚀 Live Architecture
 
-> You need **Python** installed. That's it.
-
-### Step 1 — Download the project
-
-Click the green **Code** button on GitHub → **Download ZIP** → Extract it
-
----
-
-### Step 2 — Start the backend
-
-Open a terminal in the project folder and run:
-
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py
+```text
+Frontend (Vercel) → API Calls → Backend (Render) → Algorithms
 ```
-
-✅ You should see: `Running on http://127.0.0.1:5001`
-
-> Keep this terminal open.
-
----
-
-### Step 3 — Start the frontend
-
-Open a **second terminal** and run:
-
-```bash
-cd frontend
-python -m http.server 8080
-```
-
----
-
-### Step 4 — Open the app
-
-Go to your browser and visit:
-
-```
-http://127.0.0.1:8080
-```
-
-🎮 App is live!
 
 ---
 
@@ -90,12 +55,12 @@ http://127.0.0.1:8080
 ```
 game-inventory-optimizer/
 ├── backend/
-│   ├── app.py                  ← Flask server
+│   ├── app.py
 │   ├── requirements.txt
 │   └── algorithms/
-│       ├── knapsack.py         ← 0/1 Knapsack (DP)
-│       ├── merge_sort.py       ← Merge Sort
-│       └── linear_search.py   ← Linear Search
+│       ├── knapsack.py
+│       ├── merge_sort.py
+│       └── linear_search.py
 └── frontend/
     ├── index.html
     ├── style.css
@@ -106,37 +71,97 @@ game-inventory-optimizer/
 
 ## 🔌 API Endpoints
 
-Base URL: `http://127.0.0.1:5001`
+Base URL: https://game-inventory-optimizer.onrender.com
 
-| Method | Endpoint | What it does |
-|--------|----------|--------------|
-| POST | `/optimize` | Runs Knapsack on items |
-| POST | `/sort` | Sorts items by key |
-| POST | `/search` | Searches item by name |
-| GET | `/health` | Check if server is running |
+| Method | Endpoint  | Description            |
+| ------ | --------- | ---------------------- |
+| GET    | /health   | Check server status    |
+| POST   | /optimize | Run Knapsack algorithm |
+| POST   | /sort     | Sort items             |
+| POST   | /search   | Search item by name    |
 
 ---
 
-## 🧠 Algorithms
+## 🧠 Algorithms Used
 
-**0/1 Knapsack** — Fills a DP table of size n×W, then backtracks to find selected items. Time: `O(n × W)`
+### 1. 0/1 Knapsack (Dynamic Programming)
 
-**Merge Sort** — Recursively splits and merges. No built-in sort used. Time: `O(n log n)`
+* Time Complexity: **O(n × W)**
+* Uses DP table and backtracking to select optimal items
 
-**Linear Search** — Scans each item, case-insensitive match. Time: `O(n)`
+### 2. Merge Sort
+
+* Time Complexity: **O(n log n)**
+* Divide and conquer sorting (no built-in sort used)
+
+### 3. Linear Search
+
+* Time Complexity: **O(n)**
+* Sequential search with case-insensitive matching
+
+---
+
+## 🧪 Running Locally
+
+### Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
+```
+
+### Frontend
+
+```bash
+cd frontend
+python -m http.server 8080
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:8080
+```
 
 ---
 
 ## ⚠️ Common Issues
 
-**Port 5000 blocked on Windows?**
-The app uses port `5001` by default to avoid this. If 5001 is also blocked:
-```powershell
-$env:PORT = "8000"
-python app.py
-```
-Then update `API_BASE` in `frontend/main.js` to match.
+* **Port issues (Windows):**
+
+  * App uses port 5001 by default
+* **CORS errors:**
+
+  * Handled using Flask-CORS
+* **Slow first load:**
+
+  * Backend hosted on free tier (Render sleeps)
 
 ---
 
-*Built with Flask + vanilla JS · DAA Lab Project*
+## 🎯 Project Purpose
+
+This project demonstrates practical implementation of core DAA concepts in a real-world web application, combining algorithmic efficiency with user interaction.
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 💡 Future Improvements
+
+* Add authentication system
+* Use advanced search (Binary Search / Hashing)
+* Add database (MongoDB / PostgreSQL)
+* Visualize algorithm steps
+
+---
+
+## 🚀 Final Note
+
+This project showcases how classic algorithms can be integrated into modern full-stack applications to solve real-world problems efficiently.
+
